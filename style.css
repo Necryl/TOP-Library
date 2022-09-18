@@ -33,7 +33,7 @@ body > * {
     grid-template-columns: max-content 1fr auto;
     grid-template-areas: "L . N";
 
-    --borderCol: rgb(33, 69, 110);
+    --borderCol: rgb(8, 135, 194);
     border-bottom: 0.3rem solid var(--borderCol);
 }
 
@@ -81,7 +81,8 @@ body > * {
 }
 
 .library {
-    background-color: rgb(34, 35, 37);
+    --libBgCol: rgb(26, 42, 63);
+    background-color: var(--libBgCol);
 
     --paddingTnB: 1rem;
     padding-top: var(--paddingTnB);
@@ -94,10 +95,14 @@ body > * {
     grid-template-rows: max-content;
     grid-auto-rows: max-content;
     gap: 2rem 1rem;
+
+    transition: 1s;
 }
 
 .book {
     background-color: rgb(47, 77, 90);
+
+    position: relative;
 
     padding: 1rem 1rem;
     aspect-ratio: 1/1.35;
@@ -111,9 +116,55 @@ body > * {
 .book-author {
     margin-bottom: 0.7rem;
 }
+.book-close {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+
+    fill: rgb(170, 168, 168);
+    
+    scale: 40%;
+    transform-origin: 100% 0%;
+
+    border: 7px solid transparent;
+    border-top: none;
+    border-right: none;
+    border-radius: 0rem 0rem 0rem 70%;
+
+    transition: 100ms;
+}
+.book-close:hover {
+    fill: rgb(39, 39, 39);
+    background-color: #f32f21b6;
+    scale: 45%;
+}
+.book-close:active {
+    border-width: 20rem;
+}
+.read-toggle {
+    color: #f32170;
+    border: 2px solid #f32170;
+    background-color: transparent;
+    padding: 0.2em;
+    border-radius: 0.3em;
+    transition: 100ms;
+}
+.read-toggle.read {
+    color: var(--libBgCol);
+    background-color: #f32170;    
+}
+.read-toggle:hover {
+    border-color: white;
+    color: white;
+}
+.read-toggle.read:hover {
+    background-color: white;
+    color: var(--libBgCol);
+}
+
 
 .footer {
-    background-color: rgb(27, 48, 75);
+    background-color: rgb(34, 35, 37);
 
     --paddingTnB: 0.3em;
     padding-top: var(--paddingTnB);
