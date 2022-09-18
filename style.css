@@ -192,3 +192,47 @@ body > * {
 .attribution a:hover {
     text-decoration: underline;
 }
+
+.prompt-wrapper {
+    position: fixed;
+    padding: 0%;
+    z-index: 1;
+    top: 0%;
+    left: 0%;
+    height: 100vh;
+    width: 100vw;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: grid;
+    place-content: center;
+}
+
+.prompt-container {
+    background-color: #cfb482;
+
+    padding: 1rem;
+    border-radius: 1rem;
+
+    display: grid;
+    gap: 0.5rem;
+    justify-items: center;
+}
+
+.prompt-container * {
+    color: black;
+}
+
+.prompt-container>form {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.form-block {
+    display: grid;
+}
+
+.form-line {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
