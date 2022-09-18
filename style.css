@@ -1,0 +1,143 @@
+html, body {
+    margin: 0%;
+    padding: 0%;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+
+    color: white;
+}
+
+body {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+}
+
+body > * {
+    padding: 0rem 1rem;
+}
+
+.header {
+    background-color: rgb(15, 27, 37);
+
+    --paddingTnB: 0.5rem;
+    padding-top: var(--paddingTnB);
+    padding-bottom: var(--paddingTnB);
+
+    display: grid;
+    grid-template-columns: max-content 1fr auto;
+    grid-template-areas: "L . N";
+
+    --borderCol: rgb(33, 69, 110);
+    border-bottom: 0.3rem solid var(--borderCol);
+}
+
+.logo {
+    grid-area: L;
+
+    background: linear-gradient(
+            to right, #f32170, violet, aqua);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.newBtn {
+    grid-area: N;
+
+    padding: 0.5rem 1.5rem;
+
+    border-radius: 0.5rem;
+    
+    font-size: 1rem;
+    color: #cfb482;
+    --textGlowCol: #d8971d;
+    text-shadow: 0rem 0rem 2px var(--textGlowCol);
+
+    border: 0.2rem solid black;
+    border-top-color: rgb(190, 110, 44);
+    --borderColLnR: rgb(151, 74, 29);
+    border-left-color: var(--borderColLnR);
+    border-right-color: var(--borderColLnR);
+    border-bottom-color: rgb(85, 44, 34);
+    background-color: rgb(141, 60, 40);
+
+    transition: 100ms;
+}
+.newBtn:hover {
+    scale: 102%;
+    border-top-color: rgb(238, 175, 123);
+    --borderColLnR: rgb(168, 83, 34);
+    background-color: rgb(153, 65, 42);
+    --textGlowCol: #f1ac2a;
+    color: #e9d1a5;
+}
+.newBtn:active {
+    scale: 99%;
+}
+
+.library {
+    background-color: rgb(34, 35, 37);
+
+    --paddingTnB: 1rem;
+    padding-top: var(--paddingTnB);
+    padding-bottom: var(--paddingTnB);
+
+    overflow: auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
+    gap: 2rem 1rem;
+}
+
+.book {
+    background-color: rgb(47, 77, 90);
+
+    padding: 1rem 1rem;
+    aspect-ratio: 1/1.35;
+
+    border-radius: 0.1rem;
+}
+
+.book-title {
+    margin-bottom: 0.2rem;
+}
+.book-author {
+    margin-bottom: 0.7rem;
+}
+
+.footer {
+    background-color: rgb(27, 48, 75);
+
+    --paddingTnB: 0.3em;
+    padding-top: var(--paddingTnB);
+    padding-bottom: var(--paddingTnB);
+
+    display: grid;
+    grid-template-columns: 1fr max-content;
+}
+.footer * {
+    color: rgb(228, 228, 228);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+
+    width: max-content;
+}
+
+.attribution a {
+    color: rgb(0, 238, 255);
+    text-decoration: none;
+}
+.attribution a:hover {
+    text-decoration: underline;
+}
