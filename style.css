@@ -214,6 +214,8 @@ body > * {
     padding: 1rem;
     border-radius: 1rem;
 
+    position: relative;
+
     display: grid;
     gap: 0.5rem;
     justify-items: center;
@@ -239,4 +241,27 @@ body > * {
 
 .formBtn {
     justify-self: right;
+}
+
+.cancelBtn {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+
+    fill: rgb(10, 10, 10);
+    
+    scale: 50%;
+    transform-origin: 100% 0%;
+
+    border: 7px solid transparent;
+    border-radius: 70%;
+
+    transition: 100ms;
+}
+.cancelBtn:hover {
+    fill: rgb(39, 39, 39);
+    background-color: #f32f21b6;
+}
+.cancelBtn:active {
+    /* border-width: 20rem; */
 }

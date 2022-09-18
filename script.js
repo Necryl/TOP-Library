@@ -3,14 +3,37 @@ const libraryElement = document.querySelector('.library');
 const sampleBookElement = document.querySelector('.sample > .book');
 const newBtnElement = document.querySelector('.newBtn');
 const statsElements = [...document.querySelectorAll('.stats>*')];
+const formInputElements = [...document.querySelectorAll('form input')];
+const formBtnElement = document.querySelector('.formBtn');
+const promptWrapperElement = document.querySelector('.prompt-wrapper');
+const cancelFormBtn = document.querySelector('.cancelBtn');
 
 // variables
 let library = []
 
 // events
 newBtnElement.addEventListener('click', event => {
-    addBookToLibrary();
+    promptWrapperElement.setAttribute('style', 'display: grid');
 });
+formBtnElement.addEventListener('click', event => {
+    promptWrapperElement.setAttribute('style', 'display: none')
+    let data = [];
+    formInputElements.forEach((element, index) => {
+        if (index === 3) {
+            data.push(element.checked);
+        } else {
+            data.push(element.value);
+        }
+    })
+    clearInputs();
+    addBookToLibrary(...data);
+})
+
+cancelFormBtn.addEventListener('click', event => {
+    cancelForm();
+})
+
+
 
 // constructor
 function Book(title, author, pages, read) {
@@ -120,6 +143,20 @@ function updateStats() {
     });
 }
 
+function clearInputs() {
+    formInputElements.forEach((element, index) => {
+        if (index === 3) {
+            element.checked = false;
+        } else {
+            element.value = '';
+        }
+    })
+}
+
+function cancelForm() {
+    promptWrapperElement.setAttribute('style', 'display: none');
+    clearInputs();
+}
 
 //on start
 addSampleBook();
