@@ -11,6 +11,8 @@ html, body {
     padding: 0%;
 
     color: white;
+
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -44,6 +46,8 @@ body > * {
             to right, #f32170, violet, aqua);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+
+    font-family: 'Kanit', sans-serif;
 }
 
 .newBtn {
@@ -245,13 +249,12 @@ body > * {
 
 .cancelBtn {
     position: absolute;
-    top: 5%;
-    right: 3%;
+    top: 0%;
+    right: 0%;
 
     fill: rgb(10, 10, 10);
     
     scale: 50%;
-    transform-origin: 100% 0%;
 
     border: 7px solid transparent;
     border-radius: 70%;
