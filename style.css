@@ -35,8 +35,8 @@ body > * {
     grid-template-columns: max-content 1fr auto;
     grid-template-areas: "L . N";
 
-    --borderCol: rgb(8, 135, 194);
-    border-bottom: 0.3rem solid var(--borderCol);
+    --borderCol: rgb(128, 37, 247);
+    border-bottom: 0.15rem solid var(--borderCol);
 }
 
 .logo {
@@ -46,6 +46,8 @@ body > * {
             to right, #f32170, violet, aqua);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+
+    user-select: none;
 
     font-family: 'Kanit', sans-serif;
 }
@@ -58,27 +60,27 @@ body > * {
     border-radius: 0.5rem;
     
     font-size: 1rem;
-    color: #cfb482;
+    color: #e9db8a;
     --textGlowCol: #d8971d;
     text-shadow: 0rem 0rem 2px var(--textGlowCol);
 
     border: 0.2rem solid black;
-    border-top-color: rgb(190, 110, 44);
+    border-top-color: rgb(226, 149, 86);
     --borderColLnR: rgb(151, 74, 29);
     border-left-color: var(--borderColLnR);
     border-right-color: var(--borderColLnR);
     border-bottom-color: rgb(85, 44, 34);
-    background-color: rgb(141, 60, 40);
+    background-color: rgb(182, 94, 44);
 
     transition: 100ms;
 }
 .newBtn:hover {
     scale: 102%;
-    border-top-color: rgb(238, 175, 123);
-    --borderColLnR: rgb(168, 83, 34);
-    background-color: rgb(153, 65, 42);
+    border-top-color: rgb(223, 218, 202);
+    --borderColLnR: rgb(145, 83, 13);
+    background-color: rgb(202, 113, 39);
     --textGlowCol: #f1ac2a;
-    color: #e9d1a5;
+    color: #fcf8f1;
 }
 .newBtn:active {
     scale: 99%;
@@ -104,14 +106,28 @@ body > * {
 }
 
 .book {
-    background-color: rgb(47, 77, 90);
+    --bookBgCol: rgb(158, 133, 87);
+    background-color: var(--bookBgCol);
+    border: 0.4rem solid rgb(100, 84, 66);
 
     position: relative;
 
     padding: 1rem 1rem;
     aspect-ratio: 1/1.35;
 
-    border-radius: 0.1rem;
+    border-radius: 0.3rem;
+
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 0.4rem;
+
+    transition: 100ms;
+}
+
+.book:hover {
+    scale: 102%;
+    --bookBgCol: rgb(151, 100, 41);
+    border-color: #d8b130;
 }
 
 .book-title {
@@ -119,6 +135,9 @@ body > * {
 }
 .book-author {
     margin-bottom: 0.7rem;
+}
+.book-pages {
+    align-self: end;
 }
 .book-close {
     position: absolute;
@@ -146,16 +165,19 @@ body > * {
     border-width: 20rem;
 }
 .read-toggle {
-    color: #f32170;
-    border: 2px solid #f32170;
-    background-color: transparent;
+    --highlightCol: #683ad4;
+    color: var(--highlightCol);
+    border: 2px solid var(--highlightCol);
+    background-color: rgba(255, 255, 255, 0.411);
     padding: 0.2em;
     border-radius: 0.3em;
     transition: 100ms;
+
+    margin-left: 0.3rem;
 }
 .read-toggle.read {
-    color: var(--libBgCol);
-    background-color: #f32170;    
+    color: white;
+    background-color: var(--highlightCol);    
 }
 .read-toggle:hover {
     border-color: white;
@@ -163,7 +185,7 @@ body > * {
 }
 .read-toggle.read:hover {
     background-color: white;
-    color: var(--libBgCol);
+    color: var(--bookBgCol);
 }
 
 
@@ -234,17 +256,55 @@ body > * {
     gap: 0.5rem;
 }
 
+.form-block>*, .form-line>* {
+    font-size: 1.2rem;
+}
+
+.form-block>input, .form-line>input {
+    padding: 0.3rem 0.3rem;
+}
+
 .form-block {
     display: grid;
+    gap: 0.3rem;
 }
 
 .form-line {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    justify-items: left;
+}
+
+.form-line > label {
+    justify-self: right;
+    align-self: center;
+    padding-right: 1.2rem;
 }
 
 .formBtn {
     justify-self: right;
+    background-color: #c95e4b;
+    border: 0.2rem solid #923307;
+    border-radius: 0.4rem;
+    padding: 0.3rem 1rem;
+
+    font-size: 1.2rem;
+    color: white;
+
+    transition: 100ms;
+}
+.formBtn:hover, .formBtn:focus {
+    background-color: #bd2a5b;
+    text-shadow: 0px 0px 2px #3d7ba5;
+    outline: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+#pages {
+    width: 7ch;
+}
+
+#read {
+    scale: 140%;
 }
 
 .cancelBtn {
@@ -263,8 +323,8 @@ body > * {
 }
 .cancelBtn:hover {
     fill: rgb(39, 39, 39);
-    background-color: #f32f21b6;
+    background-color: #cf8b47b6;
 }
 .cancelBtn:active {
-    /* border-width: 20rem; */
+    background-color: #f32f21b6;
 }
