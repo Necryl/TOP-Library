@@ -36,16 +36,19 @@ cancelFormBtn.addEventListener('click', event => {
 
 
 // constructor
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.element = createBookElem(title, author, pages, read);
+class Book {
+    
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.element = createBookElem(title, author, pages, read);
 
-    libraryElement.appendChild(this.element);
+        libraryElement.appendChild(this.element);
+    }
 
-    this.info = () => {
+    info() {
         return [this.title, this.author, this.pages, this.read?'read':'not read yet'].join(', ');
     }
 }
