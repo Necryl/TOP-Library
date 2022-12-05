@@ -1,330 +1,333 @@
-html, body {
-    margin: 0%;
-    padding: 0%;
+html,
+body {
+  margin: 0%;
+  padding: 0%;
 
-    height: 100vh;
-    width: 100vw;
+  height: 100vh;
+  width: 100vw;
 }
 
 * {
-    margin: 0%;
-    padding: 0%;
+  margin: 0%;
+  padding: 0%;
 
-    color: white;
+  color: white;
 
-    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    display: grid;
-    grid-template-rows: max-content 1fr max-content;
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
 }
 
 body > * {
-    padding: 0rem 1rem;
+  padding: 0rem 1rem;
 }
 
 .header {
-    background-color: rgb(15, 27, 37);
+  background-color: rgb(15, 27, 37);
 
-    --paddingTnB: 0.5rem;
-    padding-top: var(--paddingTnB);
-    padding-bottom: var(--paddingTnB);
+  --paddingTnB: 0.5rem;
+  padding-top: var(--paddingTnB);
+  padding-bottom: var(--paddingTnB);
 
-    display: grid;
-    grid-template-columns: max-content 1fr auto;
-    grid-template-areas: "L . N";
+  display: grid;
+  grid-template-columns: max-content 1fr auto;
+  grid-template-areas: "L . N";
 
-    --borderCol: rgb(128, 37, 247);
-    border-bottom: 0.15rem solid var(--borderCol);
+  --borderCol: rgb(128, 37, 247);
+  border-bottom: 0.15rem solid var(--borderCol);
 }
 
 .logo {
-    grid-area: L;
+  grid-area: L;
 
-    background: linear-gradient(
-            to right, #f32170, violet, aqua);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+  background: linear-gradient(to right, #f32170, violet, aqua);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
 
-    user-select: none;
+  user-select: none;
 
-    font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
 }
 
 .newBtn {
-    grid-area: N;
+  grid-area: N;
 
-    padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
 
-    border-radius: 0.5rem;
-    
-    font-size: 1rem;
-    color: #e9db8a;
-    --textGlowCol: #d8971d;
-    text-shadow: 0rem 0rem 2px var(--textGlowCol);
+  border-radius: 0.5rem;
 
-    border: 0.2rem solid black;
-    border-top-color: rgb(226, 149, 86);
-    --borderColLnR: rgb(151, 74, 29);
-    border-left-color: var(--borderColLnR);
-    border-right-color: var(--borderColLnR);
-    border-bottom-color: rgb(85, 44, 34);
-    background-color: rgb(182, 94, 44);
+  font-size: 1rem;
+  color: #e9db8a;
+  --textGlowCol: #d8971d;
+  text-shadow: 0rem 0rem 2px var(--textGlowCol);
 
-    transition: 100ms;
+  border: 0.2rem solid black;
+  border-top-color: rgb(226, 149, 86);
+  --borderColLnR: rgb(151, 74, 29);
+  border-left-color: var(--borderColLnR);
+  border-right-color: var(--borderColLnR);
+  border-bottom-color: rgb(85, 44, 34);
+  background-color: rgb(182, 94, 44);
+
+  transition: 100ms;
 }
 .newBtn:hover {
-    scale: 102%;
-    border-top-color: rgb(223, 218, 202);
-    --borderColLnR: rgb(145, 83, 13);
-    background-color: rgb(202, 113, 39);
-    --textGlowCol: #f1ac2a;
-    color: #fcf8f1;
+  scale: 102%;
+  border-top-color: rgb(223, 218, 202);
+  --borderColLnR: rgb(145, 83, 13);
+  background-color: rgb(202, 113, 39);
+  --textGlowCol: #f1ac2a;
+  color: #fcf8f1;
 }
 .newBtn:active {
-    scale: 99%;
+  scale: 99%;
 }
 
 .library {
-    --libBgCol: rgb(26, 42, 63);
-    background-color: var(--libBgCol);
+  --libBgCol: rgb(26, 42, 63);
+  background-color: var(--libBgCol);
 
-    --paddingTnB: 1rem;
-    padding-top: var(--paddingTnB);
-    padding-bottom: var(--paddingTnB);
+  --paddingTnB: 1rem;
+  padding-top: var(--paddingTnB);
+  padding-bottom: var(--paddingTnB);
 
-    overflow: auto;
+  overflow: auto;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-    grid-template-rows: max-content;
-    grid-auto-rows: max-content;
-    gap: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  grid-template-rows: max-content;
+  grid-auto-rows: max-content;
+  gap: 2rem 1rem;
 
-    transition: 1s;
+  transition: 1s;
 }
 
 .book {
-    --bookBgCol: rgb(158, 133, 87);
-    background-color: var(--bookBgCol);
-    border: 0.4rem solid rgb(100, 84, 66);
+  --bookBgCol: rgb(158, 133, 87);
+  background-color: var(--bookBgCol);
+  border: 0.4rem solid rgb(100, 84, 66);
 
-    position: relative;
+  position: relative;
 
-    padding: 1rem 1rem;
-    aspect-ratio: 1/1.35;
+  padding: 1rem 1rem;
+  aspect-ratio: 1/1.35;
 
-    border-radius: 0.3rem;
+  border-radius: 0.3rem;
 
-    display: grid;
-    grid-template-rows: auto auto 1fr auto;
-    gap: 0.4rem;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 0.4rem;
 
-    transition: 100ms;
+  transition: 100ms;
 }
 
 .book:hover {
-    scale: 102%;
-    --bookBgCol: rgb(151, 100, 41);
-    border-color: #d8b130;
+  scale: 102%;
+  --bookBgCol: rgb(151, 100, 41);
+  border-color: #d8b130;
 }
 
 .book-title {
-    margin-bottom: 0.2rem;
+  margin-bottom: 0.2rem;
 }
 .book-author {
-    margin-bottom: 0.7rem;
+  margin-bottom: 0.7rem;
 }
 .book-pages {
-    align-self: end;
+  align-self: end;
 }
 .book-close {
-    position: absolute;
-    top: 0%;
-    right: 0%;
+  position: absolute;
+  top: 0%;
+  right: 0%;
 
-    fill: rgb(170, 168, 168);
-    
-    scale: 40%;
-    transform-origin: 100% 0%;
+  fill: rgb(170, 168, 168);
 
-    border: 7px solid transparent;
-    border-top: none;
-    border-right: none;
-    border-radius: 0rem 0rem 0rem 70%;
+  scale: 40%;
+  transform-origin: 100% 0%;
 
-    transition: 100ms;
+  border: 7px solid transparent;
+  border-top: none;
+  border-right: none;
+  border-radius: 0rem 0rem 0rem 70%;
+
+  transition: 100ms;
 }
 .book-close:hover {
-    fill: rgb(39, 39, 39);
-    background-color: #f32f21b6;
-    scale: 45%;
+  fill: rgb(39, 39, 39);
+  background-color: #f32f21b6;
+  scale: 45%;
 }
 .book-close:active {
-    border-width: 20rem;
+  border-width: 20rem;
 }
 .read-toggle {
-    --highlightCol: #683ad4;
-    color: var(--highlightCol);
-    border: 2px solid var(--highlightCol);
-    background-color: rgba(255, 255, 255, 0.411);
-    padding: 0.2em;
-    border-radius: 0.3em;
-    transition: 100ms;
+  --highlightCol: #683ad4;
+  color: var(--highlightCol);
+  border: 2px solid var(--highlightCol);
+  background-color: rgba(255, 255, 255, 0.411);
+  padding: 0.2em;
+  border-radius: 0.3em;
+  transition: 100ms;
 
-    margin-left: 0.3rem;
+  margin-left: 0.3rem;
 }
 .read-toggle.read {
-    color: white;
-    background-color: var(--highlightCol);    
+  color: white;
+  background-color: var(--highlightCol);
 }
 .read-toggle:hover {
-    border-color: white;
-    color: white;
+  border-color: white;
+  color: white;
 }
 .read-toggle.read:hover {
-    background-color: white;
-    color: var(--bookBgCol);
+  background-color: white;
+  color: var(--bookBgCol);
 }
-
 
 .footer {
-    background-color: rgb(34, 35, 37);
+  background-color: rgb(34, 35, 37);
 
-    --paddingTnB: 0.3em;
-    padding-top: var(--paddingTnB);
-    padding-bottom: var(--paddingTnB);
+  --paddingTnB: 0.3em;
+  padding-top: var(--paddingTnB);
+  padding-bottom: var(--paddingTnB);
 
-    display: grid;
-    grid-template-columns: 1fr max-content;
+  display: grid;
+  grid-template-columns: 1fr max-content;
 }
 .footer * {
-    color: rgb(228, 228, 228);
+  color: rgb(228, 228, 228);
 }
 
 .stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
 
-    width: max-content;
+  width: max-content;
 }
 
 .attribution a {
-    color: rgb(0, 238, 255);
-    text-decoration: none;
+  color: rgb(0, 238, 255);
+  text-decoration: none;
 }
 .attribution a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .prompt-wrapper {
-    position: fixed;
-    padding: 0%;
-    z-index: 1;
-    top: 0%;
-    left: 0%;
-    height: 100vh;
-    width: 100vw;
+  position: fixed;
+  padding: 0%;
+  z-index: 1;
+  top: 0%;
+  left: 0%;
+  height: 100vh;
+  width: 100vw;
 
-    background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 
-    display: grid;
-    place-content: center;
+  display: grid;
+  place-content: center;
 }
 
 .prompt-container {
-    background-color: #cfb482;
+  background-color: #cfb482;
 
-    padding: 1rem;
-    border-radius: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
 
-    position: relative;
+  position: relative;
 
-    display: grid;
-    gap: 0.5rem;
-    justify-items: center;
+  display: grid;
+  gap: 0.5rem;
+  justify-items: center;
 }
 
 .prompt-container * {
-    color: black;
+  color: black;
 }
 
-.prompt-container>form {
-    display: grid;
-    gap: 0.5rem;
+.prompt-container > form {
+  display: grid;
+  gap: 0.5rem;
 }
 
-.form-block>*, .form-line>* {
-    font-size: 1.2rem;
+.form-block > *,
+.form-line > * {
+  font-size: 1.2rem;
 }
 
-.form-block>input, .form-line>input {
-    padding: 0.3rem 0.3rem;
+.form-block > input,
+.form-line > input {
+  padding: 0.3rem 0.3rem;
 }
 
 .form-block {
-    display: grid;
-    gap: 0.3rem;
+  display: grid;
+  gap: 0.3rem;
 }
 
 .form-line {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: left;
 }
 
 .form-line > label {
-    justify-self: right;
-    align-self: center;
-    padding-right: 1.2rem;
+  justify-self: right;
+  align-self: center;
+  padding-right: 1.2rem;
 }
 
 .formBtn {
-    justify-self: right;
-    background-color: #c95e4b;
-    border: 0.2rem solid #923307;
-    border-radius: 0.4rem;
-    padding: 0.3rem 1rem;
+  justify-self: right;
+  background-color: #c95e4b;
+  border: 0.2rem solid #923307;
+  border-radius: 0.4rem;
+  padding: 0.3rem 1rem;
 
-    font-size: 1.2rem;
-    color: white;
+  font-size: 1.2rem;
+  color: white;
 
-    transition: 100ms;
+  transition: 100ms;
 }
-.formBtn:hover, .formBtn:focus {
-    background-color: #bd2a5b;
-    text-shadow: 0px 0px 2px #3d7ba5;
-    outline: 1px solid rgba(255, 255, 255, 0.24);
+.formBtn:hover,
+.formBtn:focus {
+  background-color: #bd2a5b;
+  text-shadow: 0px 0px 2px #3d7ba5;
+  outline: 1px solid rgba(255, 255, 255, 0.24);
 }
 
 #pages {
-    width: 7ch;
+  width: 7ch;
 }
 
 #read {
-    scale: 140%;
+  scale: 140%;
 }
 
 .cancelBtn {
-    position: absolute;
-    top: 0%;
-    right: 0%;
+  position: absolute;
+  top: 0%;
+  right: 0%;
 
-    fill: rgb(10, 10, 10);
-    
-    scale: 50%;
+  fill: rgb(10, 10, 10);
 
-    border: 7px solid transparent;
-    border-radius: 70%;
+  scale: 50%;
 
-    transition: 100ms;
+  border: 7px solid transparent;
+  border-radius: 70%;
+
+  transition: 100ms;
 }
 .cancelBtn:hover {
-    fill: rgb(39, 39, 39);
-    background-color: #cf8b47b6;
+  fill: rgb(39, 39, 39);
+  background-color: #cf8b47b6;
 }
 .cancelBtn:active {
-    background-color: #f32f21b6;
+  background-color: #f32f21b6;
 }
